@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context="com.example.stutestsys.ui.LoginActivity">
+
+    <include
+        android:id="@+id/login_title"
+        layout="@layout/login_title_layout"/>
+
+    <include
+        android:id="@+id/login_input"
+        layout="@layout/login_input_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginRight="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_small"
+        android:paddingBottom="@dimen/margin_small"
+        android:paddingTop="@dimen/margin_small"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <CheckBox
+            android:id="@+id/remember_password"
+            android:padding="@dimen/dp_10"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/check_password"
+            android:textColor="@color/top_bar_normal_bg" android:checked="false"/>
+
+        <CheckBox
+            android:id="@+id/checkBox_autologin"
+            android:padding="@dimen/dp_10"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/check_autologin"
+            android:textColor="@color/top_bar_normal_bg"
+            android:checked="false"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginRight="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_huge"
+        android:paddingBottom="@dimen/margin_small"
+        android:paddingTop="@dimen/margin_small"
+        android:text="@string/login"
+        android:background="@drawable/btn_orange_selector"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_normal"/>
+
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:background="@drawable/btn_orange_selector"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_alignBaseline="@+id/login_button"
+            android:layout_alignBottom="@+id/login_button"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="49dp"
+            android:layout_marginEnd="49dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

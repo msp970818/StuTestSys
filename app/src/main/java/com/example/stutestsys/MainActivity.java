@@ -8,13 +8,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.ashokvarma.bottomnavigation.ShapeBadgeItem;
 import com.ashokvarma.bottomnavigation.TextBadgeItem;
+import com.example.stutestsys.ui.FourFragment;
+import com.example.stutestsys.ui.OneFragment;
+import com.example.stutestsys.ui.ThreeFragment;
+import com.example.stutestsys.ui.TwoFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.bt_add).setOnClickListener(new View.OnClickListener() {//数字++事件
             @Override
             public void onClick(View v) {
-                if (number<0){
+                if (number<=0){
                     mTextBadgeItem.hide();
                     number=1;
                 }else {
@@ -132,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                 .addItem(new BottomNavigationItem(R.drawable.homepage_click,"首页")
                         .setInactiveIcon(ContextCompat.getDrawable(MainActivity.this,R.drawable.homepage_normal))
                         .setBadgeItem(mShapeBadgeItem))
-                .addItem(new BottomNavigationItem(R.drawable.grown_wall_click,"成长墙")
+                .addItem(new BottomNavigationItem(R.drawable.grown_wall_click,"题库")
                         .setInactiveIcon(ContextCompat.getDrawable(MainActivity.this,R.drawable.grown_wall_normal)))
                 .addItem(new BottomNavigationItem(R.drawable.study_click,"学管通")
                         .setInactiveIcon(ContextCompat.getDrawable(MainActivity.this,R.drawable.study_normal))
