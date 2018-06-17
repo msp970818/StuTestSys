@@ -1,4 +1,4 @@
-package com.example.stutestsys;
+package com.example.stutestsys.ui.activity;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
@@ -8,15 +8,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.ashokvarma.bottomnavigation.ShapeBadgeItem;
 import com.ashokvarma.bottomnavigation.TextBadgeItem;
-import com.example.stutestsys.ui.FourFragment;
-import com.example.stutestsys.ui.OneFragment;
-import com.example.stutestsys.ui.ThreeFragment;
-import com.example.stutestsys.ui.TwoFragment;
+import com.example.stutestsys.R;
+import com.example.stutestsys.ui.fragment.FourFragment;
+import com.example.stutestsys.ui.fragment.OneFragment;
+import com.example.stutestsys.ui.fragment.ThreeFragment;
+import com.example.stutestsys.ui.fragment.TwoFragment;
+import com.example.stutestsys.util.ConstantValue;
+import com.example.stutestsys.util.SpUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -68,6 +72,18 @@ public class MainActivity extends AppCompatActivity {
                     mTextBadgeItem.setText(number+"").show();
                     number--;
                 }
+            }
+        });
+
+        //登出按钮,暂时
+        findViewById(R.id.main_btn_logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpUtils helper = new SpUtils(MainActivity.this,"setting");
+                helper.putValue(new SpUtils.ContentValue(ConstantValue.AUTOLOGIN,false));
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"登出成功！",Toast.LENGTH_SHORT).show();
             }
         });
 

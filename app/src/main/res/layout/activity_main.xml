@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    tools:context="com.example.stutestsys.MainActivity">
+    tools:context="com.example.stutestsys.ui.activity.MainActivity">
 
     <FrameLayout
         android:id="@+id/fl"
@@ -26,6 +26,13 @@
         android:layout_height="wrap_content"
         android:text="number--"
         android:layout_below="@+id/bt_add"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/main_btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登出"
+        android:layout_below="@id/bt_cut"
         android:layout_centerHorizontal="true"/>
 
     <com.ashokvarma.bottomnavigation.BottomNavigationBar

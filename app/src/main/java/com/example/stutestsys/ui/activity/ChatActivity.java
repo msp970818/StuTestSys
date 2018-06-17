@@ -1,8 +1,10 @@
-package com.example.stutestsys;
+package com.example.stutestsys.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.stutestsys.R;
 
 public class ChatActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.stutestsys.ui;
+package com.example.stutestsys.ui.activity;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -115,14 +115,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 if (CheckIsDataAlreadyInDBorNot(edit_register.getText().toString())) {
                     Toast.makeText(this, "该用户名已被注册，注册失败", Toast.LENGTH_SHORT).show();
                 } else {
-                    if (edit_setpassword.getText().toString().trim().
-                            equals(edit_resetpassword.getText().toString())) {
+                    if (edit_setpassword.getText().toString().trim().equals(edit_resetpassword.getText().toString())) {
                         registerUserInfo(edit_register.getText().toString(),
                                 edit_setpassword.getText().toString());
                         Toast.makeText(this, "注册成功！", Toast.LENGTH_SHORT).show();
                         Intent register_intent = new Intent(RegisterActivity.this,
                                 LoginActivity.class);
                         startActivity(register_intent);
+                        finish();
                     } else {
                         Toast.makeText(this, "两次输入密码不同，请重新输入！",
                                 Toast.LENGTH_SHORT).show();
@@ -132,6 +132,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             case R.id.btn_cancle:
                 Intent login_intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(login_intent);
+                finish();
                 break;
             default:
                 break;
@@ -143,7 +144,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
      */
     public boolean CheckIsDataAlreadyInDBorNot(String value) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        String Query = "Select * from usertable where username =?";
+        String Query = "Select * from usertable where account =?";
         Cursor cursor = db.rawQuery(Query, new String[]{value});
         if (cursor.getCount() > 0) {
             cursor.close();
@@ -159,7 +160,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private void registerUserInfo(String username, String userpassword) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("username", username);
+        values.put("account", username);
         values.put("password", userpassword);
         db.insert("usertable", null, values);
         db.close();

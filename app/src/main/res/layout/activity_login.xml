@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#fff"
-    tools:context="com.example.stutestsys.ui.LoginActivity">
+    tools:context="com.example.stutestsys.ui.activity.LoginActivity">
 
     <include
         android:id="@+id/login_title"
@@ -68,7 +68,7 @@
         android:text="@string/login"
         android:background="@drawable/btn_orange_selector"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/text_size_normal"/>
+        android:textSize="@dimen/text_size_large"/>
 
         <Button
             android:id="@+id/register_button"
@@ -77,7 +77,7 @@
             android:text="注册"
             android:background="@drawable/btn_orange_selector"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/text_size_normal"
+            android:textSize="@dimen/text_size_large"
             android:layout_alignBaseline="@+id/login_button"
             android:layout_alignBottom="@+id/login_button"
             android:layout_alignParentRight="true"
